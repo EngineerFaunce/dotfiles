@@ -25,6 +25,7 @@ config.window_padding = {
   bottom = 0,
 }
 config.color_scheme = 'Dracula'
+config.window_background_opacity = 0.8
 
 -- Miscellaneous settings
 config.max_fps = 120
