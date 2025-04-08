@@ -2,7 +2,7 @@ local wezterm = require('wezterm')
 local config = wezterm.config_builder()
 
 -- Font settings
-config.font_size = 14
+config.font_size = 10
 config.line_height = 1.2
 config.font = wezterm.font_with_fallback {
   'Fira Code',
