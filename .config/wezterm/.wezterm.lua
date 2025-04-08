@@ -30,4 +30,13 @@ config.window_background_opacity = 0.8
 -- Miscellaneous settings
 config.max_fps = 120
 
+-- Key bindings
+config.keys = {
+  {
+    key = 'P',
+    mods = 'CTRL',
+    action = wezterm.action.ActivateCommandPalette,
+  },
+}
+
 return config
