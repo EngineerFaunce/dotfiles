@@ -37,6 +37,11 @@ config.keys = {
     mods = 'CTRL',
     action = wezterm.action.ActivateCommandPalette,
   },
+  {
+    key = 'w',
+    mods = 'ALT',
+    action = wezterm.action.CloseCurrentPane { confirm = true },
+  },
 }
 
 return config
