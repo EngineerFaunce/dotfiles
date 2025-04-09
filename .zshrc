@@ -29,7 +29,7 @@ export PATH="$PATH:/home/fonz/.local/bin"
 # For a full list of active aliases, run `alias`.
 alias zshconfig="hx $HOME/.zshrc"
 alias hxconfig="hx $HOME/.config/helix/config.toml"
-alias wezconfig="hx $HOME/.wezterm.lua"
+alias wezconfig="hx $HOME/.config/wezterm/wezterm.lua"
 alias ls="eza"
 alias la="eza --all --git"
 
