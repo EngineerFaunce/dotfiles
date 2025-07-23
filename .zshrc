@@ -32,6 +32,7 @@ alias hxconfig="hx $HOME/.config/helix/config.toml"
 alias wezconfig="hx $HOME/.config/wezterm/wezterm.lua"
 alias ls="eza"
 alias la="eza --all --git"
+alias bat="batcat" # Because of a name clash
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
