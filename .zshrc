@@ -15,7 +15,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git fast-syntax-highlighting)
+plugins=(git fast-syntax-highlighting rust)
 
 zle -N menu-search
 zle -N recent-paths
