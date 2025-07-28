@@ -24,6 +24,15 @@ config.max_fps = 120
 
 -- Key bindings
 config.keys = {
+  -- quickly launch editor for wezterm configuration
+  {
+    key = ",",
+    mods = 'SUPER',
+    action = wezterm.action.SpawnCommandInNewTab {
+      cwd = wezterm.home_dir,
+      args = { 'hx', wezterm.config_file },
+    },
+  },
   {
     key = 'P',
     mods = 'CTRL',
