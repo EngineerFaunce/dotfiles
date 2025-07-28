@@ -23,6 +23,7 @@ config.window_background_opacity = 0.8
 config.max_fps = 120
 
 -- Key bindings
+config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
   -- quickly launch editor for wezterm configuration
   {
