@@ -1,5 +1,6 @@
 local wezterm = require('wezterm')
 local config = wezterm.config_builder()
+local projects = require 'projects'
 
 -- Font settings
 config.font_size = 10
@@ -34,6 +35,18 @@ config.keys = {
       args = { 'hx', wezterm.config_file },
     },
   },
+  -- Open a project in a new workspace
+  {
+    key = 'p',
+    mods = 'LEADER',
+    action = projects.choose_project(),
+  },
+  -- Choose a workspace to switch to
+  {
+    key = 'f',
+    mods = 'LEADER',
+    action = wezterm.action.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' },
+  },
   {
     key = 'P',
     mods = 'CTRL',
@@ -45,5 +58,17 @@ config.keys = {
     action = wezterm.action.CloseCurrentPane { confirm = true },
   },
 }
+
+
+wezterm.on("gui-startup", function(cmd)
+  local tab, pane, window = wezterm.mux.spawn_window {
+    workspace = "home",
+    cwd = wezterm.home_dir,
+    args = cmd and cmd.args or {},
+  }
+  window:gui_window():maximize()
+end)
+
+config.default_workspace = "home"
 
 return config
