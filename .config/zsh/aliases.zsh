@@ -15,6 +15,9 @@ alias ls="eza -h --color=auto --group-directories-first"
 alias la="eza -lah --color=auto --all --git --group-directories-first"
 alias lsbc="lsblk | bat -l conf -p"
 alias cat="bat"
-alias bat="batcat" # Because of a name clash
+# Because of a name clash in debian based distros
+if command -v batcat >/dev/null 2>&1; then
+  alias bat="batcat" 
+fi
 alias shell="exec $SHELL -l"
 
