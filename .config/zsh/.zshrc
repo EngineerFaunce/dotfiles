@@ -18,10 +18,6 @@ fpath+=($HOME/repos/pure)
 autoload -U promptinit; promptinit
 prompt pure
 
-# User configuration
-
-export PATH="$PATH:/home/fonz/.local/bin"
-
 # For a full list of active aliases, run `alias`.
 alias zshconfig="hx $HOME/.zshrc"
 alias hxconfig="hx $HOME/.config/helix/config.toml"
@@ -38,5 +34,6 @@ alias freec="free -h | bat -l cpuinfo -p"
 
 eval "$(zoxide init --cmd cd zsh)"
 
-
-
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
