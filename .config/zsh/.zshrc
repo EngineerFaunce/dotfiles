@@ -1,5 +1,6 @@
 zmodload zsh/complist
 autoload -U compinit && compinit -d "$ZSH_COMPDUMP"
+autoload -U colors && colors
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
