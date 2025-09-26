@@ -11,8 +11,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-#source "$HOME/repos/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
-
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(git fast-syntax-highlighting rust)
@@ -30,14 +28,19 @@ export PATH="$PATH:/home/fonz/.local/bin"
 alias zshconfig="hx $HOME/.zshrc"
 alias hxconfig="hx $HOME/.config/helix/config.toml"
 alias wezconfig="hx $HOME/.config/wezterm/wezterm.lua"
-alias ls="eza"
-alias la="eza --all --git"
+alias ls="eza -h --color=auto --group-directories-first"
+alias la="eza -lah --color=auto --all --git --group-directories-first"
+alias lsbc="lsblk | bat -l conf -p"
+alias cat="bat"
 alias bat="batcat" # Because of a name clash
+alias shell="exec $SHELL -l"
+alias rm="rm -Iv"
+alias mv="mv -i"
+alias freec="free -h | bat -l cpuinfo -p"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval "$(zoxide init --cmd cd zsh)"
-
 
