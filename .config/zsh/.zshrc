@@ -13,6 +13,12 @@ zle -N recent-paths
 
 source $ZSH/oh-my-zsh.sh
 
+# history opts
+HISTSIZE=1000000
+SAVEHIST=1000000
+HISTFILE="$XDG_CACHE_HOME/zsh_history" # move histfile to cache
+HISTCONTROL=ignoreboth # consecutive duplicates & commands starting with space are not saved
+
 # Pure prompt
 fpath+=($HOME/repos/pure)
 autoload -U promptinit; promptinit
