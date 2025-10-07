@@ -36,3 +36,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # source aliases
 [ -f "$XDG_CONFIG_HOME/zsh/aliases.zsh" ] && source "$XDG_CONFIG_HOME/zsh/aliases.zsh"
+
+# source additional, untracked aliases
+for f in $XDG_CONFIG_HOME/zsh/.zshrc.d/*.zsh(N); do
+  source "$f"
+done

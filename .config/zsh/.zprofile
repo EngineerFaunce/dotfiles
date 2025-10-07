@@ -10,3 +10,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump"
 
+# source additional (secret) environment variables
+for f in $ZDOTDIR/env.d/*.zsh(N); do
+  source "$f"
+done
+
