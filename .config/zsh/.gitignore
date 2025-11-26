@@ -1,2 +1,3 @@
 .env.d/*.zsh
 .zshrc.d/*.zsh
+*.zcompdump
