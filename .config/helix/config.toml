@@ -2,3 +2,13 @@ theme = "dracula_transparent"
 
 [editor.file-picker]
 hidden = false
+
+# Lazygit integration
+[keys.normal]
+C-g = [
+    ":write-all",
+    ":insert-output lazygit >/dev/tty",
+    ":redraw",
+    ":reload-all"
+]
+
