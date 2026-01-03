@@ -15,6 +15,16 @@ plugins=(git fast-syntax-highlighting ssh-agent rust)
 zle -N menu-search
 zle -N recent-paths
 
+# Allow Ctrl-z to toggle between suspend and resume (Helix editor)
+function Resume {
+  fg
+  zle push-input
+  BUFFER=""
+  zle accept-line
+}
+zle -N Resume
+bindkey "^Z" Resume
+
 source $ZSH/oh-my-zsh.sh
 
 # history opts
@@ -30,6 +40,7 @@ prompt pure
 
 eval "$(zoxide init --cmd cd zsh)"
 
+# Node version manager (nvm) config
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
