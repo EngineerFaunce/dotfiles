@@ -20,4 +20,5 @@ if command -v batcat >/dev/null 2>&1; then
   alias bat="batcat" 
 fi
 alias shell="exec $SHELL -l"
+tf() { mkdir -p "$(dirname "$1")" && touch "$1" ; }
 
