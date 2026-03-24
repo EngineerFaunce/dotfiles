@@ -5,6 +5,7 @@ enable = true
 
 [editor.file-picker]
 hidden = false
+git-ignore = false
 
 # Lazygit integration
 [keys.normal]
