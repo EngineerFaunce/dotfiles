@@ -22,6 +22,7 @@ config.window_background_opacity = 0.8
 
 -- Miscellaneous settings
 config.max_fps = 120
+config.audible_bell = "Disabled"
 
 -- Key bindings
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
