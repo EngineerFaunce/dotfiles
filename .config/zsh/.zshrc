@@ -2,10 +2,6 @@ zmodload zsh/complist
 autoload -U compinit && compinit -d "$ZSH_COMPDUMP"
 autoload -U colors && colors
 
-# Disable all beeps
-setopt NO_BEEP
-unsetopt LIST_BEEP
-unsetopt HIST_BEEP
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -32,7 +28,26 @@ bindkey "^Z" Resume
 
 source $ZSH/oh-my-zsh.sh
 
+### Options - run `man zshoptions` for more information ###
+
+# Disable all beeps
+setopt NO_BEEP
+unsetopt LIST_BEEP
+unsetopt HIST_BEEP
+
+# History preferences
+setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_NO_STORE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_SAVE_NO_DUPS
+
+### Params - run `man zshparam` for more information ###
+
 # history opts
+HISTORY_IGNORE="(\&|[bf]g|c|clear|history|exit|q|pwd|* --help)"
 HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE="$XDG_CACHE_HOME/zsh_history" # move histfile to cache
