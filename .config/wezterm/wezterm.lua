@@ -62,7 +62,7 @@ config.keys = {
 
 
 wezterm.on("gui-startup", function(cmd)
-  local tab, pane, window = wezterm.mux.spawn_window {
+  local _, _, window = wezterm.mux.spawn_window {
     workspace = "home",
     cwd = wezterm.home_dir,
     args = cmd and cmd.args or {},
