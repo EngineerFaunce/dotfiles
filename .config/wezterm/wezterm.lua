@@ -67,7 +67,6 @@ wezterm.on("gui-startup", function(cmd)
     cwd = wezterm.home_dir,
     args = cmd and cmd.args or {},
   }
-  window:gui_window():maximize()
 end)
 
 config.default_workspace = "home"
