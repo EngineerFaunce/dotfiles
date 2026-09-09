@@ -53,7 +53,8 @@ SAVEHIST=1000000
 HISTFILE="$XDG_CACHE_HOME/zsh_history" # move histfile to cache
 
 # Pure prompt
-fpath+=($HOME/repos/pure)
+# TODO: make this path configurable
+fpath+=($HOME/repos/tools/pure)
 autoload -U promptinit; promptinit
 prompt pure
 
