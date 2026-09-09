@@ -11,7 +11,7 @@ ZSH_THEME=""
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git fast-syntax-highlighting ssh-agent rust)
+plugins=(git ssh-agent rust)
 
 zle -N menu-search
 zle -N recent-paths
