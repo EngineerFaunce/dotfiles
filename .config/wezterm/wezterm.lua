@@ -58,6 +58,14 @@ config.keys = {
     mods = 'ALT',
     action = wezterm.action.CloseCurrentPane { confirm = true },
   },
+  -- Open lazygit
+  {
+    key = 'g',
+    mods = 'CTRL|SHIFT',
+    action = wezterm.action.SpawnCommandInNewTab {
+      args = { 'lazygit' },
+    },
+  }
 }
 
 
