@@ -17,7 +17,7 @@ config.colors = {
 
 -- Appearance
 config.color_scheme = 'Dracula'
-config.window_background_opacity = 0.8
+config.window_background_opacity = 1.0
 
 -- Miscellaneous settings
 config.max_fps = 120
@@ -61,6 +61,15 @@ config.keys = {
   }
 }
 
-
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+  config.default_domain = "WSL:Ubuntu"
+  config.wsl_domains = {
+    {
+      name = "WSL:Ubuntu",
+      distribution = "Ubuntu",
+      default_cwd = "~"
+    },
+  }
+end
 
 return config
