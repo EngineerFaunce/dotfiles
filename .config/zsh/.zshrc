@@ -8,7 +8,14 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="${ZSH_CUSTOM:-$ZSH/custom}"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME=""
+ZSH_PURE_DIR="${ZSH_PURE_DIR:-$HOME/repos/tools/pure}"
+if [[ ! -d $ZSH_PURE_DIR ]]; then
+FALLBACK_THEME="robbyrussell"
+  print -u2 "zshrc: pure prompt not found at $ZSH_PURE_DIR. Using fallback theme '$FALLBACK_THEME'"
+  ZSH_THEME="$FALLBACK_THEME"
+else
+  ZSH_THEME=""
+fi
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -63,10 +70,11 @@ SAVEHIST=1000000
 HISTFILE="$XDG_CACHE_HOME/zsh_history" # move histfile to cache
 
 # Pure prompt
-# TODO: make this path configurable
-fpath+=($HOME/repos/tools/pure)
-autoload -U promptinit; promptinit
-prompt pure
+if [[ -d $ZSH_PURE_DIR ]]; then
+  fpath+=($ZSH_PURE_DIR)
+  autoload -U promptinit; promptinit
+  prompt pure
+fi
 
 # Initialize zoxide and alias `cd` to it
 eval "$(zoxide init --cmd cd zsh)"
