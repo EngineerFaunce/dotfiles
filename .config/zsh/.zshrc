@@ -5,6 +5,7 @@ autoload -U colors && colors
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+ZSH_CUSTOM="${ZSH_CUSTOM:-$ZSH/custom}"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME=""
@@ -12,6 +13,15 @@ ZSH_THEME=""
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(git ssh-agent rust)
+
+# Load custom plugins if available
+for p in zsh-patina; do
+  if [[ -d $ZSH_CUSTOM/plugins/$p ]]; then
+    plugins+=($p)
+  else
+    print -P -u2 "%F{yellow}[zshrc]%f plugin '$p' not found, skipping"
+  fi
+done
 
 zle -N menu-search
 zle -N recent-paths
