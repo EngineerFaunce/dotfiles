@@ -19,6 +19,12 @@ alias cat="bat"
 if command -v batcat >/dev/null 2>&1; then
   alias bat="batcat" 
 fi
+
+# reload shell
 alias shell="exec $SHELL -l"
+
+# touch file, creating any missing parent directories first
 tf() { mkdir -p "$(dirname "$1")" && touch "$1" ; }
 
+# Human-readable list of paths in the $PATH envar
+showpath() { print -l $path; }
